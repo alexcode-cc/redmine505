@@ -5,8 +5,14 @@ module Redmine
     class << self
       def app_name; 'Redmine' end
       def url; 'https://www.redmine.org/' end
-      def help_url; 'https://www.redmine.org/guide' end
       def versioned_name; "#{app_name} #{Redmine::VERSION}" end
+
+      #def help_url; 'https://www.redmine.org/guide' end
+      def help_url
+        configuration = YAML.load_file(File.join(Rails.root, 'config', 'configuration.yml'))
+        host_url = configuration['host_url']
+        url = "#{host_url}/guides"
+      end
 
       def environment
         s = +"Environment:\n"
