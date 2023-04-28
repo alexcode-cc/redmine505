@@ -45,3 +45,4 @@
 
 /node_modules
 yarn-error.log
+/config/deploy/production.rb

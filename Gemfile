@@ -25,6 +25,16 @@ gem 'net-pop', '~> 0.1.1'
 # Rails 6.1.6.1 does not work with Pysch 3.0.2, which is installed by default with Ruby 2.5. See https://github.com/rails/rails/issues/45590
 gem 'psych', '>= 3.1.0' if Gem.ruby_version < Gem::Version.new('2.6.0')
 
+# Use Capistrano for deployment
+gem 'capistrano', '>= 3.17.2'
+gem 'capistrano-rails', '>= 1.6.2'
+gem 'capistrano-passenger', '>= 0.2.1'
+gem 'capistrano-rvm', '>= 0.1.2'
+gem 'ed25519', '>= 1.3.0'
+gem 'bcrypt_pbkdf', '>= 1.1.0'
+gem 'capistrano-rails-console', '~> 2.3.0', require: false
+gem 'capistrano-deploytags', '~> 1.0.0', require: false , group: :development
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :x64_mingw, :mswin]
 
