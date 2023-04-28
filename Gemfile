@@ -96,8 +96,9 @@ else
   warn("Please configure your config/database.yml first")
 end
 
+gem 'listen', '~> 3.3'
+
 group :development do
-  gem 'listen', '~> 3.3'
   gem "yard"
 end
 
