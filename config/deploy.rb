@@ -18,6 +18,10 @@ set :rvm_type, :user                      # Defaults to: :auto
 set :rvm_ruby_version, '3.2.2@redmine'  # Defaults to: 'default'
 #set :rvm_custom_path, '~/.myrvm'         # only needed if not detected
 
+# Skip assets
+Rake::Task['deploy:assets:precompile'].clear_actions
+Rake::Task['deploy:assets:backup_manifest'].clear_actions
+
 # Seed data with rvm
 namespace :rvm do
   desc "load seed data with rvm"
