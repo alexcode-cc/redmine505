@@ -79,12 +79,12 @@ if File.exist?(database_file)
       when 'mysql2'
         gem "mysql2", "~> 0.5.0", :platforms => [:mri, :mingw, :x64_mingw]
       when /postgresql/
-        gem "pg", "~> 1.2.2", :platforms => [:mri, :mingw, :x64_mingw]
-      when /sqlite3/
-        gem "sqlite3", "~> 1.4.0", :platforms => [:mri, :mingw, :x64_mingw]
+        gem "mysql2", "~> 1.2.2", :platforms => [:mri, :mingw, :x64_mingw]
+      when /mysql2/
+        gem "mysql2", "~> 1.4.0", :platforms => [:mri, :mingw, :x64_mingw]
       when /sqlserver/
         gem "tiny_tds", "~> 2.1.2", :platforms => [:mri, :mingw, :x64_mingw]
-        gem "activerecord-sqlserver-adapter", "~> 6.1.0", :platforms => [:mri, :mingw, :x64_mingw]
+        gem "mysql2", "~> 6.1.0", :platforms => [:mri, :mingw, :x64_mingw]
       else
         warn("Unknown database adapter `#{adapter}` found in config/database.yml, use Gemfile.local to load your own database gems")
       end
